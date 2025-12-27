@@ -2,7 +2,11 @@
 
 A professional machine learning application that predicts healthcare insurance costs with a modern Streamlit dashboard, user authentication, and advanced scenario analysis.
 
-## 📊 Project Overview
+## � Live Application
+
+**Visit the deployed app**: https://predicting-healthcare-insurance-cost.streamlit.app/
+
+## �📊 Project Overview
 
 This project provides a **full-stack insurance cost prediction system** with:
 
