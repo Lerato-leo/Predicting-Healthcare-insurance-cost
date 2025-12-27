@@ -468,26 +468,18 @@ def load_model_and_scaler():
         script_dir = os.path.dirname(os.path.abspath(__file__))
         
         scaler_path = os.path.join(script_dir, 'scaler.pkl')
-        model_keras_path = os.path.join(script_dir, 'model.keras')
         model_pkl_path = os.path.join(script_dir, 'model.pkl')
         
         with open(scaler_path, 'rb') as f:
             scaler = pickle.load(f)
         
-        if os.path.exists(model_keras_path):
-            model = tf.keras.models.load_model(model_keras_path)
-            model_type = 'tensorflow'
-        elif os.path.exists(model_pkl_path):
-            with open(model_pkl_path, 'rb') as f:
-                model = pickle.load(f)
-            model_type = 'sklearn'
-        else:
-            raise FileNotFoundError("Model not found")
+        with open(model_pkl_path, 'rb') as f:
+            model = pickle.load(f)
         
-        return model, scaler, model_type
+        return model, scaler
     except Exception as e:
         st.error(f"Error loading model: {e}")
-        return None, None, None
+        return None, None
 
 # ==================== AUTHENTICATION LOGIC ====================
 def show_login_page():
@@ -598,7 +590,7 @@ with st.sidebar:
         st.rerun()
 
 # Load model
-model, scaler, model_type = load_model_and_scaler()
+model, scaler = load_model_and_scaler()
 
 if model is None:
     st.error("⚠️ Model not found. Please train the model first using `python train_model.py`")
@@ -647,11 +639,7 @@ with tab1:
         features_scaled = scaler.transform(features)
         
         # Make prediction
-        if model_type == 'tensorflow':
-            prediction = model.predict(features_scaled, verbose=0)[0][0]
-        else:
-            prediction = model.predict(features_scaled)[0]
-        
+        prediction = model.predict(features_scaled)[0]
         prediction = max(0, prediction)
         
         # Save prediction to database
@@ -768,10 +756,7 @@ with tab2:
                     ]])
                     features_scaled = scaler.transform(features)
                     
-                    if model_type == 'tensorflow':
-                        new_pred = model.predict(features_scaled, verbose=0)[0][0]
-                    else:
-                        new_pred = model.predict(features_scaled)[0]
+                    new_pred = model.predict(features_scaled)[0]
                     
                     savings = st.session_state.last_prediction - new_pred
                     pct_change = (savings / st.session_state.last_prediction) * 100
@@ -800,10 +785,7 @@ with tab2:
                 ]])
                 features_scaled = scaler.transform(features)
                 
-                if model_type == 'tensorflow':
-                    new_pred = model.predict(features_scaled, verbose=0)[0][0]
-                else:
-                    new_pred = model.predict(features_scaled)[0]
+                new_pred = model.predict(features_scaled)[0]
                 
                 savings = st.session_state.last_prediction - new_pred
                 pct_change = (savings / st.session_state.last_prediction) * 100
@@ -836,10 +818,7 @@ with tab2:
                 ]])
                 features_scaled = scaler.transform(features)
                 
-                if model_type == 'tensorflow':
-                    new_pred = model.predict(features_scaled, verbose=0)[0][0]
-                else:
-                    new_pred = model.predict(features_scaled)[0]
+                new_pred = model.predict(features_scaled)[0]
                 
                 difference = new_pred - st.session_state.last_prediction
                 pct_change = (difference / st.session_state.last_prediction) * 100
@@ -866,10 +845,7 @@ with tab2:
                 ]])
                 features_scaled = scaler.transform(features)
                 
-                if model_type == 'tensorflow':
-                    new_pred = model.predict(features_scaled, verbose=0)[0][0]
-                else:
-                    new_pred = model.predict(features_scaled)[0]
+                new_pred = model.predict(features_scaled)[0]
                 
                 difference = new_pred - st.session_state.last_prediction
                 pct_change = (difference / st.session_state.last_prediction) * 100
