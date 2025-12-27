@@ -10,7 +10,6 @@ import pickle
 import os
 import sqlite3
 import hashlib
-import tensorflow as tf  # type: ignore
 from sklearn.preprocessing import StandardScaler  # type: ignore
 from datetime import datetime
 
