@@ -150,27 +150,11 @@ st.markdown("""
         overflow: hidden;
     }
     
-    .header-container::before {
-        content: '';
-        position: absolute;
-        top: -50%;
-        right: -50%;
-        width: 200%;
-        height: 200%;
-        background: transparent;
-        background-size: 50px 50px;
-        animation: moveBackground 10s linear infinite;
-    }
-    
-    @keyframes moveBackground {
-        0% { transform: translate(0, 0); }
-        100% { transform: translate(50px, 50px); }
-    }
-    
     .header-title {
         font-size: 3.5em;
         font-weight: 800;
         margin: 0;
+        color: #ffffff;
         text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
         letter-spacing: -1px;
         position: relative;
@@ -181,8 +165,6 @@ st.markdown("""
         font-size: 1.3em;
         margin: 15px 0 0 0;
         opacity: 0.95;
-        position: relative;
-        z-index: 1;
         font-weight: 300;
         letter-spacing: 0.5px;
     }
@@ -489,7 +471,7 @@ def show_login_page():
     with col2:
         st.markdown("""
         <div class="header-container" style="margin-top: 60px; margin-bottom: 50px;">
-            <h1 class="header-title">⚕️ InsureAI</h1>
+            <h1 class="header-title" style="color: #ffffff;">⚕️ InsureAI</h1>
             <p class="header-subtitle">Healthcare Insurance Cost Predictor</p>
         </div>
         """, unsafe_allow_html=True)
@@ -570,7 +552,7 @@ if not st.session_state.logged_in:
 # Header
 st.markdown("""
 <div class="header-container">
-    <h1 class="header-title">⚕️ InsureAI</h1>
+    <h1 class="header-title" style="color: #ffffff;">⚕️ InsureAI</h1>
     <p class="header-subtitle">Healthcare Insurance Cost Predictor</p>
     <div class="header-tagline">
         <span class="tag">🤖 AI-Powered</span>
