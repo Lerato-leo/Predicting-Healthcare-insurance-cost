@@ -141,20 +141,22 @@ st.markdown("""
     .header-container {
         background: linear-gradient(135deg, #2a2a2a 0%, #1f1f1f 100%);
         color: white;
-        padding: 50px 30px;
-        border-radius: 20px;
+        padding: 50px 20px;
+        border-radius: 0px;
         margin-bottom: 40px;
+        margin-left: calc(-50vw + 50%);
+        margin-right: calc(-50vw + 50%);
+        margin-top: -1rem;
         text-align: center;
         box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
         position: relative;
         overflow: hidden;
-        border: 1px solid #404040;
+        border: none;
         width: 100vw;
-        margin-left: calc(-50vw + 50%);
     }
     
     .header-title {
-        font-size: 150px;
+        font-size: 180px;
         font-weight: 800;
         margin: 0;
         color: #ffffff;
@@ -165,7 +167,7 @@ st.markdown("""
     }
     
     .header-subtitle {
-        font-size: 32px;
+        font-size: 48px;
         margin: 15px 0 0 0;
         opacity: 0.95;
         font-weight: 300;
