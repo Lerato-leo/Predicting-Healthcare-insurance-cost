@@ -98,7 +98,7 @@ init_db()
 # Page configuration
 st.set_page_config(
     page_title="InsureAI - Healthcare Cost Predictor",
-    page_icon="⚕️",
+    page_icon="📋",
     layout="wide",
     initial_sidebar_state="expanded"
 )
@@ -127,7 +127,7 @@ st.markdown("""
     
     /* Root styling */
     html, body, [data-testid="stAppViewContainer"] {
-        background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 100%);
+        background: linear-gradient(135deg, #0d0d0d 0%, #1a1a1a 100%);
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
     }
     
@@ -139,15 +139,16 @@ st.markdown("""
     
     /* Header styling */
     .header-container {
-        background: linear-gradient(135deg, #4a5ba8 0%, #53407a 100%);
+        background: linear-gradient(135deg, #2a2a2a 0%, #1f1f1f 100%);
         color: white;
         padding: 60px 40px;
         border-radius: 20px;
         margin-bottom: 40px;
         text-align: center;
-        box-shadow: 0 20px 60px rgba(74, 91, 168, 0.3);
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
         position: relative;
         overflow: hidden;
+        border: 1px solid #404040;
     }
     
     .header-title {
@@ -191,13 +192,14 @@ st.markdown("""
     
     /* Card styling */
     .metric-card, .card {
-        background: white;
+        background: #252525;
         padding: 25px;
         border-radius: 15px;
         box-shadow: var(--shadow-lg);
         margin: 15px 0;
-        border: 1px solid rgba(0,0,0,0.05);
+        border: 1px solid #404040;
         transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        color: #e0e0e0;
     }
     
     .metric-card:hover, .card:hover {
@@ -207,7 +209,7 @@ st.markdown("""
     }
     
     .result-card {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        background: linear-gradient(135deg, #333333 0%, #252525 100%);
         color: white;
         padding: 40px;
         border-radius: 20px;
@@ -215,6 +217,7 @@ st.markdown("""
         margin: 30px 0;
         position: relative;
         overflow: hidden;
+        border: 1px solid #404040;
     }
     
     .result-card::before {
@@ -270,9 +273,9 @@ st.markdown("""
     
     /* Button styling */
     .stButton > button {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        background: linear-gradient(135deg, #404040 0%, #2a2a2a 100%);
         color: white !important;
-        border: none;
+        border: 1px solid #505050;
         padding: 14px 32px !important;
         border-radius: 10px;
         font-weight: 600;
@@ -287,7 +290,8 @@ st.markdown("""
     .stButton > button:hover {
         transform: translateY(-3px);
         box-shadow: var(--shadow-lg);
-        background: linear-gradient(135deg, #5568d3 0%, #6a3a8a 100%);
+        background: linear-gradient(135deg, #505050 0%, #333333 100%);
+        border-color: #606060;
     }
     
     .stButton > button:active {
@@ -362,7 +366,7 @@ st.markdown("""
     
     /* Section headers */
     h1, h2, h3, h4 {
-        color: #2c3e50;
+        color: #ffffff;
         font-weight: 700;
         letter-spacing: -0.5px;
     }
@@ -374,7 +378,7 @@ st.markdown("""
     /* Divider */
     hr {
         border: none;
-        border-top: 2px solid #e0e0e0;
+        border-top: 2px solid #404040;
         margin: 30px 0;
     }
     
@@ -389,10 +393,10 @@ st.markdown("""
     /* Footer */
     .footer {
         text-align: center;
-        color: #666;
+        color: #999;
         padding: 40px 20px;
         font-size: 0.95em;
-        border-top: 2px solid #e0e0e0;
+        border-top: 2px solid #404040;
         margin-top: 60px;
     }
     
@@ -403,12 +407,13 @@ st.markdown("""
     
     /* Metric styling */
     [data-testid="metric-container"] {
-        background: white;
+        background: #252525;
         padding: 20px;
         border-radius: 15px;
         box-shadow: var(--shadow-md);
-        border: 1px solid rgba(0,0,0,0.05);
+        border: 1px solid #404040;
         transition: all 0.3s ease;
+        color: #e0e0e0;
     }
     
     [data-testid="metric-container"]:hover {
@@ -471,7 +476,7 @@ def show_login_page():
     with col2:
         st.markdown("""
         <div class="header-container" style="margin-top: 60px; margin-bottom: 50px;">
-            <h1 class="header-title" style="color: #ffffff;">⚕️ InsureAI</h1>
+            <h1 class="header-title" style="color: #ffffff;">InsureAI</h1>
             <p class="header-subtitle">Healthcare Insurance Cost Predictor</p>
         </div>
         """, unsafe_allow_html=True)
@@ -480,43 +485,43 @@ def show_login_page():
         st.markdown("""
         ## Welcome to InsureAI
         
-        ### 🎯 What We Do
+        ### What We Do
         InsureAI uses advanced machine learning to predict your personalized healthcare insurance costs based on your health profile and lifestyle factors.
         
-        ### 💡 Why InsureAI?
+        ### Why InsureAI?
         - **Accurate Predictions**: AI-powered model trained on 50,000+ real insurance records
         - **Personal Insights**: Understand what drives your insurance costs
         - **Scenario Planning**: See how lifestyle changes affect your premiums
         - **Privacy First**: Your data is secure and never shared
         
-        ### 🔑 Key Features
-        - 📊 Real-time cost predictions
-        - 🎯 What-if scenario analysis
-        - 💾 Save your predictions history
-        - 📈 Track your health metrics
+        ### Key Features
+        - Real-time cost predictions
+        - What-if scenario analysis
+        - Save your predictions history
+        - Track your health metrics
         
         ---
         """, unsafe_allow_html=True)
         
         # Login/Signup tabs
-        auth_tab1, auth_tab2 = st.tabs(["🔐 Login", "📝 Sign Up"])
+        auth_tab1, auth_tab2 = st.tabs(["Login", "Sign Up"])
         
         with auth_tab1:
             st.subheader("Login to Your Account")
             login_username = st.text_input("Username", key="login_username", placeholder="Enter your username")
             login_password = st.text_input("Password", type="password", key="login_password", placeholder="Enter your password")
             
-            if st.button("🔓 Login", use_container_width=True, key="login_button"):
+            if st.button("Login", use_container_width=True, key="login_button"):
                 if login_username and login_password:
                     if verify_user(login_username, login_password):
                         st.session_state.logged_in = True
                         st.session_state.username = login_username
-                        st.success("✅ Login successful! Redirecting...")
+                        st.success("Login successful! Redirecting...")
                         st.rerun()
                     else:
-                        st.error("❌ Invalid username or password")
+                        st.error("Invalid username or password")
                 else:
-                    st.warning("⚠️ Please enter username and password")
+                    st.warning("Please enter username and password")
         
         with auth_tab2:
             st.subheader("Create a New Account")
@@ -524,18 +529,18 @@ def show_login_page():
             signup_password = st.text_input("Password", type="password", key="signup_password", placeholder="Create a password")
             signup_password_confirm = st.text_input("Confirm Password", type="password", key="signup_password_confirm", placeholder="Confirm your password")
             
-            if st.button("📝 Sign Up", use_container_width=True, key="signup_button"):
+            if st.button("Sign Up", use_container_width=True, key="signup_button"):
                 if not signup_username or not signup_password:
-                    st.warning("⚠️ Please fill in all fields")
+                    st.warning("Please fill in all fields")
                 elif signup_password != signup_password_confirm:
-                    st.error("❌ Passwords don't match")
+                    st.error("Passwords don't match")
                 elif len(signup_password) < 6:
-                    st.warning("⚠️ Password must be at least 6 characters")
+                    st.warning("Password must be at least 6 characters")
                 else:
                     if create_user(signup_username, signup_password):
-                        st.success("✅ Account created! Please login above.")
+                        st.success("Account created! Please login above.")
                     else:
-                        st.error("❌ Username already exists")
+                        st.error("Username already exists")
 
 # Check if user is logged in
 if "logged_in" not in st.session_state:
@@ -552,20 +557,20 @@ if not st.session_state.logged_in:
 # Header
 st.markdown("""
 <div class="header-container">
-    <h1 class="header-title" style="color: #ffffff;">⚕️ InsureAI</h1>
+    <h1 class="header-title" style="color: #ffffff;">InsureAI</h1>
     <p class="header-subtitle">Healthcare Insurance Cost Predictor</p>
     <div class="header-tagline">
-        <span class="tag">🤖 AI-Powered</span>
-        <span class="tag">📊 ML Models</span>
-        <span class="tag">⚡ Real-Time</span>
+        <span class="tag">AI-Powered</span>
+        <span class="tag">ML Models</span>
+        <span class="tag">Real-Time</span>
     </div>
 </div>
 """, unsafe_allow_html=True)
 
 # User menu in sidebar
 with st.sidebar:
-    st.markdown(f"**👤 Welcome, {st.session_state.username}!**")
-    if st.button("🚪 Logout", use_container_width=True):
+    st.markdown(f"**Welcome, {st.session_state.username}!**")
+    if st.button("Logout", use_container_width=True):
         st.session_state.logged_in = False
         st.session_state.username = None
         st.success("Logged out successfully!")
@@ -575,11 +580,11 @@ with st.sidebar:
 model, scaler = load_model_and_scaler()
 
 if model is None:
-    st.error("⚠️ Model not found. Please train the model first using `python train_model.py`")
+    st.error("Model not found. Please train the model first using `python train_model.py`")
     st.stop()
 
 # Create tabs
-tab1, tab2, tab3, tab4 = st.tabs(["📊 Predictor", "🎯 Scenarios", "💡 Insights", "📋 History"])
+tab1, tab2, tab3, tab4 = st.tabs(["Predictor", "Scenarios", "Insights", "History"])
 
 # ==================== TAB 1: PREDICTOR ====================
 with tab1:
@@ -604,7 +609,7 @@ with tab1:
         region = st.selectbox("Region", ["northeast", "northwest", "southeast", "southwest"])
     
     # Prediction button
-    if st.button("🔮 Predict Cost", use_container_width=True):
+    if st.button("Predict Cost", use_container_width=True):
         # Prepare data
         sex_encoded = 0 if sex == "female" else 1
         smoker_encoded = 1 if smoker else 0
@@ -631,7 +636,7 @@ with tab1:
         # Display result
         st.markdown(f"""
         <div class="result-card">
-            <h3 style="margin: 0 0 10px 0; position: relative; z-index: 1;">💰 Estimated Annual Cost</h3>
+            <h3 style="margin: 0 0 10px 0; position: relative; z-index: 1;">Estimated Annual Cost</h3>
             <div class="result-value">${prediction:,.2f}</div>
             <div class="result-breakdown">
                 <div class="breakdown-item">
@@ -656,51 +661,51 @@ with tab1:
         # Profile summary
         col1, col2 = st.columns(2)
         with col1:
-            st.markdown("### 📋 Your Profile")
+            st.markdown("### Your Profile")
             profile_data = {
-                '🎂 Age': f'{age} years old',
-                '👤 Gender': sex.capitalize(),
-                '⚖️ BMI': f'{bmi:.1f} kg/m²',
-                '👨‍👩‍👧 Dependents': f'{children} child(ren)' if children != 0 else 'None',
-                '🚭 Smoking': '❌ Yes' if smoker else '✅ No',
-                '🗺️ Region': region.capitalize()
+                'Age': f'{age} years old',
+                'Gender': sex.capitalize(),
+                'BMI': f'{bmi:.1f} kg/m²',
+                'Dependents': f'{children} child(ren)' if children != 0 else 'None',
+                'Smoking': 'Yes' if smoker else 'No',
+                'Region': region.capitalize()
             }
             for key, value in profile_data.items():
                 st.markdown(f"**{key}** <br> {value}", unsafe_allow_html=True)
         
         with col2:
-            st.markdown("### 📈 Cost Drivers")
+            st.markdown("### Cost Drivers")
             factors = []
             
             # Age factor
             if age < 30:
-                factors.append(("🎂 Age", "Low Impact", "#27ae60"))
+                factors.append(("Age", "Low Impact", "#27ae60"))
             elif age < 50:
-                factors.append(("🎂 Age", "Moderate Impact", "#f39c12"))
+                factors.append(("Age", "Moderate Impact", "#f39c12"))
             else:
-                factors.append(("🎂 Age", "High Impact ⬆️", "#e74c3c"))
+                factors.append(("Age", "High Impact", "#e74c3c"))
             
             # BMI factor
             if bmi < 18.5:
-                factors.append(("⚖️ BMI", "Underweight", "#27ae60"))
+                factors.append(("BMI", "Underweight", "#27ae60"))
             elif bmi < 25:
-                factors.append(("⚖️ BMI", "Healthy ✓", "#27ae60"))
+                factors.append(("BMI", "Healthy", "#27ae60"))
             elif bmi < 30:
-                factors.append(("⚖️ BMI", "Overweight", "#f39c12"))
+                factors.append(("BMI", "Overweight", "#f39c12"))
             else:
-                factors.append(("⚖️ BMI", "Obese ⬆️", "#e74c3c"))
+                factors.append(("BMI", "Obese", "#e74c3c"))
             
             # Smoking
             if smoker:
-                factors.append(("🚭 Smoking", "Major Impact ⬆️", "#e74c3c"))
+                factors.append(("Smoking", "Major Impact", "#e74c3c"))
             else:
-                factors.append(("✓ Non-smoker", "Positive ✓", "#27ae60"))
+                factors.append(("Non-smoker", "Positive", "#27ae60"))
             
             # Region
             if region == "northeast":
-                factors.append(("🗺️ Region", "Higher Rates", "#f39c12"))
+                factors.append(("Region", "Higher Rates", "#f39c12"))
             else:
-                factors.append(("🗺️ Region", "Standard Rates", "#27ae60"))
+                factors.append(("Region", "Standard Rates", "#27ae60"))
             
             for emoji_label, status, color in factors:
                 st.markdown(
@@ -712,9 +717,9 @@ with tab1:
 # ==================== TAB 2: SCENARIOS ====================
 with tab2:
     if 'last_prediction' not in st.session_state:
-        st.info("👈 Make a prediction first in the Predictor tab to run scenarios")
+        st.info("Make a prediction first in the Predictor tab to run scenarios")
     else:
-        st.subheader("🎯 What-If Analysis")
+        st.subheader("What-If Analysis")
         st.write("Explore how different life changes would affect your insurance costs:")
         
         st.divider()
@@ -722,7 +727,7 @@ with tab2:
         scenario_col1, scenario_col2 = st.columns(2)
         
         with scenario_col1:
-            st.markdown("#### 🚭 Quit Smoking")
+            st.markdown("#### Quit Smoking")
             st.write("The most impactful change you can make")
             if st.button("Calculate Savings", key="quit_smoking", use_container_width=True):
                 if st.session_state.last_formdata['smoker']:
@@ -749,10 +754,10 @@ with tab2:
                     with col_b:
                         st.metric("New Annual Cost", f"${new_pred:,.2f}")
                 else:
-                    st.success("You're already a non-smoker! 🎉")
+                    st.success("You're already a non-smoker!")
         
         with scenario_col2:
-            st.markdown("#### ⚖️ Lose Weight (BMI -5)")
+            st.markdown("#### Lose Weight (BMI -5)")
             st.write("Achieve a healthier weight range")
             if st.button("Calculate Savings", key="lower_bmi", use_container_width=True):
                 modified = st.session_state.last_formdata.copy()
@@ -783,7 +788,7 @@ with tab2:
         scenario_col3, scenario_col4 = st.columns(2)
         
         with scenario_col3:
-            st.markdown("#### 🗺️ Change Region")
+            st.markdown("#### Change Region")
             st.write("See how location affects your costs")
             if st.button("Calculate Difference", key="change_region", use_container_width=True):
                 modified = st.session_state.last_formdata.copy()
@@ -812,7 +817,7 @@ with tab2:
                     st.metric("Cost Change", f"${difference:+,.2f}", f"{pct_change:+.1f}%")
         
         with scenario_col4:
-            st.markdown("#### 📅 Project 10 Years")
+            st.markdown("#### Project 10 Years")
             st.write("See your future insurance costs")
             if st.button("Calculate Future Cost", key="age_factor", use_container_width=True):
                 modified = st.session_state.last_formdata.copy()
@@ -840,33 +845,33 @@ with tab2:
 
 # ==================== TAB 3: INSIGHTS ====================
 with tab3:
-    st.subheader("📚 Insurance Cost Insights")
+    st.subheader("Insurance Cost Insights")
     
     col1, col2, col3 = st.columns(3)
     
     with col1:
-        st.metric("💻 Model Type", "Gradient Boosting")
+        st.metric("Model Type", "Gradient Boosting")
     with col2:
-        st.metric("📊 Training Data", "50,000+ Records")
+        st.metric("Training Data", "50,000+ Records")
     with col3:
-        st.metric("🎯 Accuracy", "R² = 0.8383")
+        st.metric("Accuracy", "R² = 0.8383")
     
     st.divider()
     
     st.markdown("""
-    ### 🔍 Key Factors Affecting Your Premium
+    ### Key Factors Affecting Your Premium
     """)
     
     insight_col1, insight_col2 = st.columns(2)
     
     with insight_col1:
         st.markdown("""
-        #### 🚭 Smoking Status
+        #### Smoking Status
         - Smokers typically pay **2-3x more** for health insurance
         - Quitting is the **#1 impactful change**
         - Immediate health benefits + lower premiums
         
-        #### 🎂 Age
+        #### Age
         - Premiums increase with age
         - Sharp increase after **age 50**
         - Youth = better rates (18-30)
@@ -874,13 +879,13 @@ with tab3:
     
     with insight_col2:
         st.markdown("""
-        #### ⚖️ BMI (Body Mass Index)
-        - **18.5-25**: Best rates ✓
+        #### BMI (Body Mass Index)
+        - **18.5-25**: Best rates
         - **25-30**: Higher premiums
         - **30+**: Significantly higher costs
         - Exercise & nutrition = lower premiums
         
-        #### 🗺️ Region
+        #### Region
         - Northeast: Higher costs
         - Other regions: Competitive rates
         - Hard to change, but varies by 10-15%
@@ -889,7 +894,7 @@ with tab3:
     st.divider()
     
     st.markdown("""
-    ### 💡 How to Lower Your Premium
+    ### How to Lower Your Premium
     """)
     
     strategy_col1, strategy_col2, strategy_col3 = st.columns(3)
@@ -897,30 +902,30 @@ with tab3:
     with strategy_col1:
         st.markdown("""
         <div style="background: #e74c3c22; border-left: 4px solid #e74c3c; padding: 15px; border-radius: 8px;">
-        <strong style="color: #e74c3c;">🔥 High Impact</strong><br>
-        ✅ Quit smoking<br>
-        ✅ Lose weight<br>
-        ✅ Regular exercise
+        <strong style="color: #e74c3c;">High Impact</strong><br>
+        Quit smoking<br>
+        Lose weight<br>
+        Regular exercise
         </div>
         """, unsafe_allow_html=True)
     
     with strategy_col2:
         st.markdown("""
         <div style="background: #f39c1222; border-left: 4px solid #f39c12; padding: 15px; border-radius: 8px;">
-        <strong style="color: #f39c12;">⚡ Medium Impact</strong><br>
-        ✅ Annual checkups<br>
-        ✅ Manage stress<br>
-        ✅ Healthy diet
+        <strong style="color: #f39c12;">Medium Impact</strong><br>
+        Annual checkups<br>
+        Manage stress<br>
+        Healthy diet
         </div>
         """, unsafe_allow_html=True)
     
     with strategy_col3:
         st.markdown("""
         <div style="background: #27ae6022; border-left: 4px solid #27ae60; padding: 15px; border-radius: 8px;">
-        <strong style="color: #27ae60;">💚 Maintenance</strong><br>
-        ✅ Stay healthy<br>
-        ✅ Monitor BMI<br>
-        ✅ Preventive care
+        <strong style="color: #27ae60;">Maintenance</strong><br>
+        Stay healthy<br>
+        Monitor BMI<br>
+        Preventive care
         </div>
         """, unsafe_allow_html=True)
     
@@ -930,7 +935,7 @@ with tab3:
     
     with col_model:
         st.markdown("""
-        ### 🤖 Model Information
+        ### Model Information
         
         **Algorithm:** Gradient Boosting Regressor
         
@@ -947,7 +952,7 @@ with tab3:
     
     with col_data:
         st.markdown("""
-        ### 📋 Data & Privacy
+        ### Data & Privacy
         
         **Your Data:** Only used for this prediction
         - No storage of personal information
@@ -968,13 +973,13 @@ with tab3:
     st.divider()
     
     st.info(
-        "💡 **Pro Tip:** Use the Scenarios tab to see how lifestyle changes could reduce your costs. "
+        "Pro Tip: Use the Scenarios tab to see how lifestyle changes could reduce your costs. "
         "Small improvements add up to significant savings over time!"
     )
 
 # ==================== TAB 4: HISTORY ====================
 with tab4:
-    st.subheader("📋 Your Prediction History")
+    st.subheader("Your Prediction History")
     
     predictions = get_user_predictions(st.session_state.username)
     
@@ -990,7 +995,7 @@ with tab4:
                 'Age': age,
                 'Gender': sex.capitalize(),
                 'BMI': f'{bmi:.1f}',
-                'Smoker': '✅ Yes' if smoker else '❌ No',
+                'Smoker': 'Yes' if smoker else 'No',
                 'Region': region.capitalize(),
                 'Annual Cost': f'${prediction:,.2f}'
             })
@@ -1012,17 +1017,17 @@ with tab4:
             avg_cost = sum(costs) / len(costs)
             st.metric("Average Cost", f"${avg_cost:,.2f}")
     else:
-        st.info("👈 Make your first prediction in the Predictor tab to see your history here!")
+        st.info("Make your first prediction in the Predictor tab to see your history here!")
 
 # Footer
 st.divider()
 st.markdown("""
 <div class="footer">
-    <h3 style="margin-top: 0; color: #0066cc;">⚕️ InsureAI</h3>
+    <h3 style="margin-top: 0; color: #ffffff;">InsureAI</h3>
     <p><strong>Healthcare Insurance Cost Predictor</strong></p>
     <p style="color: #999; margin: 15px 0;">Built with advanced machine learning to provide accurate, ethical, and transparent insurance cost predictions.</p>
     <p style="margin-bottom: 0; font-size: 0.85em; color: #999;">
-        📊 ML Powered • 🔐 Secure • 📈 Accurate • 💡 Transparent
+        ML Powered • Secure • Accurate • Transparent
     </p>
 </div>
 """, unsafe_allow_html=True)
