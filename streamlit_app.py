@@ -141,7 +141,7 @@ st.markdown("""
     .header-container {
         background: linear-gradient(135deg, #2a2a2a 0%, #1f1f1f 100%);
         color: white;
-        padding: 60px 40px;
+        padding: 50px 30px;
         border-radius: 20px;
         margin-bottom: 40px;
         text-align: center;
@@ -149,10 +149,12 @@ st.markdown("""
         position: relative;
         overflow: hidden;
         border: 1px solid #404040;
+        width: 100vw;
+        margin-left: calc(-50vw + 50%);
     }
     
     .header-title {
-        font-size: 3.5em;
+        font-size: 150px;
         font-weight: 800;
         margin: 0;
         color: #ffffff;
@@ -163,7 +165,7 @@ st.markdown("""
     }
     
     .header-subtitle {
-        font-size: 1.3em;
+        font-size: 32px;
         margin: 15px 0 0 0;
         opacity: 0.95;
         font-weight: 300;
